@@ -18,6 +18,7 @@ To install and run this app on your own machine, follow these steps:
 1. **Clone the repository**:
     ```sh
     git clone https://github.com/Caidora/WebDex
+    cd WebDex
     cd vite-project
     ```
 
