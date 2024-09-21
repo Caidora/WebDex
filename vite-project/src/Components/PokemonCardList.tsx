@@ -101,7 +101,7 @@ export function PokemonCardList({ pokemon }: PokemonCardListProps) {
 
                 <StyledInfoBox>
                   <Chip
-                    label={`Height: ${p.height}`}
+                    label={`Height: ${p.height}   m`}
                     size="small"
                     sx={{
                       backgroundColor: "#f5f5f5",
@@ -110,7 +110,7 @@ export function PokemonCardList({ pokemon }: PokemonCardListProps) {
                     }}
                   />
                   <Chip
-                    label={`Weight: ${p.weight}`}
+                    label={`Weight: ${p.weight} kg`}
                     size="small"
                     sx={{
                       backgroundColor: "#f5f5f5",

@@ -53,8 +53,8 @@ function App() {
         const pokemonData = data.data.gen3_species.map((species: any) => ({
           id: species.id,
           name: species.name,
-          height: species.pokemon_v2_pokemons[0].height,
-          weight: species.pokemon_v2_pokemons[0].weight,
+          height: species.pokemon_v2_pokemons[0].height/10,
+          weight: species.pokemon_v2_pokemons[0].weight/10,
           types: data.data.pokemon_v2_pokemontype
             .filter((type: any) => type.pokemon_id === species.id)
             .map((type: any) => type.pokemon_v2_type.name),

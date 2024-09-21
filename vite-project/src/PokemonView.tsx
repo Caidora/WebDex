@@ -73,8 +73,8 @@ function PokemonView() {
           evolves_from_species_id: species.evolves_from_species_id,
           capture_rate: species.capture_rate,
           base_happiness: species.base_happiness,
-          height: species.pokemon_v2_pokemons[0].height,
-          weight: species.pokemon_v2_pokemons[0].weight,
+          height: species.pokemon_v2_pokemons[0].height/10,
+          weight: species.pokemon_v2_pokemons[0].weight/10,
           egg_groups: species.pokemon_v2_pokemonegggroups.map(
             (group: any) => group.pokemon_v2_egggroup.name
           ),
@@ -137,10 +137,10 @@ function PokemonView() {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1">Height: {pokemon?.height}</Typography>
+            <Typography variant="body1">Height: {pokemon?.height} m</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1">Weight: {pokemon?.weight}</Typography>
+            <Typography variant="body1">Weight: {pokemon?.weight} kg</Typography>
           </Grid>
         </Grid>
         <Box sx={{ marginTop: 2 }}>
