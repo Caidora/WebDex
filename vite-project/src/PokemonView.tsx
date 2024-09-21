@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { Header } from "./components/Header";
 import { PokemonType, capitalizeFirstLetter } from "./components/pokemonType";
+import "./PokemonView.css";
 
 interface Pokemon {
   id: number;
@@ -28,7 +29,8 @@ function PokemonView() {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  const pokemonUrl =
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/";
   const query = `
     query getPokemonData($id: Int!) {
       gen3_species: pokemon_v2_pokemonspecies(where: {id: {_eq: $id}}) {
@@ -94,8 +96,8 @@ function PokemonView() {
   if (error) return <Typography variant="h6">Error: {error}</Typography>;
 
   return (
-    <Container sx={{ width: "100%" }}>
-      <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", padding: 0 }}>
+      <Box sx={{ width: "100%", padding: 0 }}>
         <Header search={false} />
       </Box>
       <Box sx={{ padding: 2, textAlign: "center" }}>
@@ -111,6 +113,13 @@ function PokemonView() {
           <Typography variant="h1">
             {capitalizeFirstLetter(pokemon?.name)}
           </Typography>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}>
+          <img
+            src={`${pokemonUrl}${String(pokemon?.id).padStart(3, "0")}.png`}
+            alt={pokemon?.name}
+            style={{ width: "200px", height: "200px" }}
+          />
         </Box>
         <Grid
           container
@@ -148,7 +157,7 @@ function PokemonView() {
           ))}
         </Box>
       </Box>
-    </Container>
+    </Box>
   );
 }
 

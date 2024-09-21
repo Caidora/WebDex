@@ -16,7 +16,7 @@ export function Header({ onSearch, search }: HeaderProps) {
 
   return (
     <AppBar position="static" sx={{ width: "100%" }}>
-      <Toolbar>
+      <Toolbar sx={{ padding: 0 }}>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Pokédex</Link>
         </Typography>
