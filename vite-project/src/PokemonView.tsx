@@ -3,12 +3,11 @@ import { useParams } from "react-router-dom";
 import {
   Box,
   Typography,
-  Container,
   CircularProgress,
   Grid,
 } from "@mui/material";
 import { Header } from "./components/Header";
-import { PokemonType, capitalizeFirstLetter } from "./components/pokemonType";
+import { PokemonType, capitalizeFirstLetter } from "./components/PokemonType";
 import "./PokemonView.css";
 
 interface Pokemon {
@@ -62,7 +61,7 @@ function PokemonView() {
     fetch("https://beta.pokeapi.co/graphql/v1beta", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query, variables: { id: parseInt(id) } }),
+      body: JSON.stringify({ query, variables: { id: parseInt(id || "0") } }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -111,7 +110,7 @@ function PokemonView() {
         >
           <Typography variant="h6">#{pokemon?.id}</Typography>
           <Typography variant="h1">
-            {capitalizeFirstLetter(pokemon?.name)}
+            {pokemon?.name && capitalizeFirstLetter(pokemon?.name)}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}>

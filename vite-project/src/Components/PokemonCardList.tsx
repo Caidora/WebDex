@@ -1,7 +1,11 @@
 import { Box, Card, CardContent, Typography, Grid, Chip } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
-import { getTypeColor, getTextColor, capitalizeFirstLetter } from './pokemonType';
+import {
+  getTypeColor,
+  getTextColor,
+  capitalizeFirstLetter,
+} from "./PokemonType";
 
 interface Pokemon {
   id: number;
@@ -82,15 +86,18 @@ export function PokemonCardList({ pokemon }: PokemonCardListProps) {
             <StyledCard sx={{ borderColor: getTypeColor(p.types[0]) }}>
               <CardContent>
                 <StyledIdBox>#{p.id}</StyledIdBox>
-                <StyledTypography variant="h5" component="div">
+                <StyledTypography variant="h5">
                   {capitalizeFirstLetter(p.name)}
                 </StyledTypography>
 
-                <StyledImageBox
-                  component="img"
-                  src={`${pokemonUrl}${String(p.id).padStart(3, "0")}.png`}
-                  alt={p.name}
-                />
+                <StyledImageBox>
+                  <img
+                    src={`${pokemonUrl}${String(p.id).padStart(3, "0")}.png`}
+                    alt={p.name}
+                    width="100%"
+                    height="auto"
+                  ></img>
+                </StyledImageBox>
 
                 <StyledInfoBox>
                   <Chip
