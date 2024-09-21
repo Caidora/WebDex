@@ -8,6 +8,10 @@ This Pokedex app allows users to browse and search for various Pokémon. Users c
 - **Search Pokémon**: Use the search bar to find specific Pokémon by name or number.
 - **Detailed View**: Click on a Pokémon to see more detailed information about it.
 
+## Online Access
+
+You can access the Pokedex app online at [https://white-island-0ec6d3400.5.azurestaticapps.net/](https://white-island-0ec6d3400.5.azurestaticapps.net/).
+
 ## Installation
 
 To install and run this app on your own machine, follow these steps:
