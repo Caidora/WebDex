@@ -91,7 +91,7 @@ function App() {
   return (
     <Box sx={{ width: "100%" }}>
       <Header onSearch={handleSearch} search={true} />
-      <Box>
+      <Box sx={{ marginTop: 2 }}>
         <PokemonCardList pokemon={filteredPokemon} />
       </Box>
     </Box>

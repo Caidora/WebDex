@@ -91,7 +91,7 @@ function PokemonView() {
       });
   }, [id]);
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <Box><Header search={false} /><Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}><CircularProgress /></Box></Box>;
   if (error) return <Typography variant="h6">Error: {error}</Typography>;
 
   return (
