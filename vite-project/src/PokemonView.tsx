@@ -6,8 +6,8 @@ import {
   CircularProgress,
   Grid,
 } from "@mui/material";
-import { Header } from "./components/Header";
-import { PokemonType, capitalizeFirstLetter } from "./components/PokemonType";
+import { Header } from "./Components/Header";
+import { PokemonType, capitalizeFirstLetter } from "./Components/PokemonType";
 import "./PokemonView.css";
 
 interface Pokemon {

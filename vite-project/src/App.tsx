@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { PokemonCardList } from "./components/PokemonCardList";
-import { Header } from "./components/Header";
+import { PokemonCardList } from "./Components/PokemonCardList";
+import { Header } from "./Components/Header";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import "./App.css";
 
