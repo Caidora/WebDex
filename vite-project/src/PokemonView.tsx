@@ -58,6 +58,10 @@ function PokemonView() {
   `;
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
+    // Fetch Pokemon data
     fetch("https://beta.pokeapi.co/graphql/v1beta", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
