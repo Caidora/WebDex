@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Pokedex App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Pokedex app allows users to browse and search for various Pokémon. Users can view detailed information about each Pokémon, including their height, weight, and types.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Browse Pokémon**: View a list of Pokémon with their images, names, heights, weights, and types.
+- **Search Pokémon**: Use the search bar to find specific Pokémon by name or number.
+- **Detailed View**: Click on a Pokémon to see more detailed information about it.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To install and run this app on your own machine, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/yourusername/pokedex-app.git
+    cd pokedex-app
+    ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Install dependencies**:
+    ```sh
+    npm install
+    ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. **Run the app**:
+    ```sh
+    npm start
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. Open your browser and navigate to `http://localhost:3000` to view the app.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Screenshots
+
+### Home Page
+![Home Page](homepage-screenshot.png)
+
+### Search Functionality
+![Search Functionality](search-screenshot.png)
+
+### Detailed View
+![Detailed View](detailedview-screenshot.png)
+
+## Technologies Used
+
+- React
+- CSS
+- JavaScript
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to contribute to this project by submitting issues or pull requests.
