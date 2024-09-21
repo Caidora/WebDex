@@ -2,9 +2,9 @@ import { Box, Card, CardContent, Typography, Grid, Chip } from "@mui/material";
 import { styled } from "@mui/system";
 import { Link } from "react-router-dom";
 import {
-  getTypeColor,
-  getTextColor,
+  PokemonType,
   capitalizeFirstLetter,
+  getTypeColor
 } from "./PokemonType";
 
 interface Pokemon {
@@ -121,21 +121,9 @@ export function PokemonCardList({ pokemon }: PokemonCardListProps) {
                 </StyledInfoBox>
 
                 <StyledTypesBox>
-                  {p.types.map((type) => {
-                    const backgroundColor = getTypeColor(type);
-                    const textColor = getTextColor(backgroundColor);
-                    return (
-                      <Chip
-                        key={type}
-                        label={type}
-                        size="small"
-                        sx={{
-                          backgroundColor: backgroundColor,
-                          color: textColor,
-                        }}
-                      />
-                    );
-                  })}
+                {p.types.map((type) => (
+            <PokemonType key={type} type={type} />
+          ))}
                 </StyledTypesBox>
               </CardContent>
             </StyledCard>
